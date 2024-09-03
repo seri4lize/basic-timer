@@ -1,8 +1,8 @@
 export class Timer {
     constructor() {
         this.hours = 0;
-        this.minutes = 59;
-        this.seconds = 59;
+        this.minutes = 0;
+        this.seconds = 0;
         this.milliseconds = 0;
         this.intervalId = null;
     }
