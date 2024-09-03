@@ -1,0 +1,81 @@
+body {
+    margin-top: 10vw;
+    background-color: #515151;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: var(--font-mono);
+    user-select: none;
+}
+
+.main-container h1 {
+    color: #fff;
+    text-shadow: 6px 6px 1px rgba(49, 49, 49, 0.9);
+    font-size: 72px;
+}
+.timer h1 {
+    font-size: 64px;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 6px 6px 1px rgba(49, 49, 49, 0.404);
+    background-color: #353535;
+}
+.buttons button {
+    border: 2px solid black;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 0 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #646464;
+    color: #fff;
+    box-shadow: 0px 6px 0px rgb(46, 46, 46);
+    border: none;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+.buttons button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 0px rgb(46, 46, 46);
+}
+.buttons button:active {
+    transition: ease-in-out 0.05s;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px rgb(46, 46, 46);
+
+}
+
+.buttons #start {
+    color: #fff;
+    background-color: #009900;
+}
+.buttons #stop {
+    background-color: #767676;
+}
+.buttons #reset {
+    background-color: #f50000;
+}
+.footer {
+    color: #fff;
+    text-shadow: 4px 4px 1px rgba(49, 49, 49, 0.9);
+    font-size: 24px;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer a {
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #33aeff;
+}
