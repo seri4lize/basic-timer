@@ -8,7 +8,7 @@ export default function App() {
     <div className="main-container">
         <h1>Basic Timer</h1>
         <div className="timer">
-            <h1 id="timer" className="timer">00:00:00</h1>
+            <h1 id="timer" className="timer">00,00</h1>
         </div>
         <div className="buttons" id="buttons">
             <button className="start" id="start" onClick={()=>timer.start()}>Start</button>

@@ -42,8 +42,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 81, 81, 81;
+    --background-end-rgb: 59, 59, 59;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
@@ -74,4 +74,7 @@
 
 * {
   font-family: var(--font-mono);
+}
+body {
+  background-color: #515151;
 }

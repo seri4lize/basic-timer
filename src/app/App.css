@@ -1,6 +1,5 @@
 body {
     margin-top: 10vw;
-    background-color: #515151;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -8,7 +7,7 @@ body {
     font-family: var(--font-mono);
     user-select: none;
 }
-
+  
 .main-container h1 {
     color: #fff;
     text-shadow: 6px 6px 1px rgba(49, 49, 49, 0.9);

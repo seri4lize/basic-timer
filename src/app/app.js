@@ -1,8 +1,9 @@
 export class Timer {
     constructor() {
         this.hours = 0;
-        this.minutes = 0;
-        this.seconds = 0;
+        this.minutes = 59;
+        this.seconds = 59;
+        this.milliseconds = 0;
         this.intervalId = null;
     }
 
@@ -10,25 +11,25 @@ export class Timer {
         if (!this.intervalId) {
             this.intervalId = setInterval(() => {
                 this.tick();
-            }, 1000);
+            }, 10);
         }
     }
 
     tick() {
-        if (this.seconds < 59) {
+        this.milliseconds += 10;
+        if (this.milliseconds >= 1000) {
             this.seconds++;
-        } else if (this.minutes < 59) {
+            this.milliseconds = 0;
+        }
+        if (this.seconds >= 60) {
             this.minutes++;
             this.seconds = 0;
-        } else if (this.hours < 23) {
+        }
+        if (this.minutes >= 60) {
             this.hours++;
             this.minutes = 0;
-            this.seconds = 0;
-        } else if (this.hours === 23 && this.minutes === 59 && this.seconds === 59) {
-            this.hours++;
         }
-
-        if (this.hours === 24) {
+        if (this.hours >= 24) {
             this.reset();
             alert('24 hours! Are you crazy?');
         }
@@ -40,7 +41,17 @@ export class Timer {
         const hours = String(this.hours).padStart(2, '0');
         const minutes = String(this.minutes).padStart(2, '0');
         const seconds = String(this.seconds).padStart(2, '0');
-        const time = `${hours}:${minutes}:${seconds}`;
+        const milliseconds = String(Math.floor(this.milliseconds / 10)).padStart(2, '0');
+
+        let time;
+        if (this.hours === 0 && this.minutes === 0) {
+            time = `${seconds},${milliseconds}`;
+        } else if (this.hours === 0) {
+            time = `${minutes}.${seconds},${milliseconds}`;
+        } else {
+            time = `${hours}:${minutes}.${seconds},${milliseconds}`;
+        }
+
         document.getElementById('timer').innerHTML = time;
     }
 
@@ -56,6 +67,7 @@ export class Timer {
         this.hours = 0;
         this.minutes = 0;
         this.seconds = 0;
+        this.milliseconds = 0;
         this.displayTime();
     }
 }
